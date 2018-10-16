@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+	<div id="app">
+	  <el-table
+    :data="tableData"
+    border
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="开奖时间"
+      >
+      <div>7777</div>
+    </el-table-column>
+    <el-table-column
+      prop="date"
+      label="赛道一"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="赛道二"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="赛道三">
+    </el-table-column>
+    <el-table-column
+      prop="date"
+      label="赛道四"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="赛道五"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="赛道六">
+    </el-table-column>
+    <el-table-column
+      prop="date"
+      label="赛道七"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="赛道八"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="赛道九">
+    </el-table-column>
+    <el-table-column
+      prop="date"
+      label="赛道十"
+      >
+    </el-table-column>
+  </el-table>
+	</div>
+	<script>
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		    tableData: [],
+		    url:'https://www.78977b.com/api/newest'
+		  },
+		  methods:{
+		  	getData(){
+		  		$.ajax(this.url+'?code=pk10&t=1539668549297',{
+		  			data:{
+		  				'_': new Date().getTime()
+		  			},
+		        dataType:'jsonp',
+		        crossDomain:'true',
+		        success(data){
+	            console.log(data)        
+		        },
+		        error(data){
+		        	console.log(data)   
+		        }
+		      })
+		  	}
+		  },
+		  created(){
+		  	this.getData()
+		  }
+		})
+	</script>
+</body>
+</html>
